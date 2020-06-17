@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>dailyverrou.fr - Chaque jour un nouveau verrou</title>
+
+    <script data-goatcounter="https://fffrancois.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+    <meta property="og:image" content="https://dailyverrou.fr/images/locks/042.jpg" />
+
+    <script>
+      const NUMBER_OF_IMAGES = 64;
+
+      window.onload = function() {
+        setImageUrl(imageForToday());
+      };
+
+      function imageForToday() {
+        const today = new Date();
+        const seed = today.getUTCDate() + today.getMonth();
+        const paddedNumber = ("000" + seed % NUMBER_OF_IMAGES).slice(-3);
+        return `images/locks/${paddedNumber}.jpg`;
+      }
+
+      function setImageUrl(url) {
+        const lock_image = document.getElementById("lock_image");
+        lock_image.setAttribute("src", url);
+      }
+    </script>
+
+    <style media="screen" type="text/css">
+      body {
+        text-align: center;
+      }
+
+      #lock_image {
+        max-width: 500px;
+        max-height: 500px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>Voici le verrou du jour :</h1>
+    <img id="lock_image" src=""/>
+    <p>
+      Partager sur :
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//dailyverrou.fr/">Facebook</a>
+      -
+      <a href="https://twitter.com/home?status=https%3A//dailyverrou.fr/">Twitter</a>
+    </p>
+  </body>
+</html>
