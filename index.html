@@ -9,6 +9,8 @@
 
     <meta property="og:image" content="https://dailyverrou.fr/images/locks/042.jpg" />
 
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
     <script>
       const NUMBER_OF_IMAGES = 64;
 
@@ -34,9 +36,20 @@
         text-align: center;
       }
 
+      h1 {
+        font-size: 5vw;
+      }
+
       #lock_image {
-        max-width: 500px;
-        max-height: 500px;
+        max-width: 90vw;
+        max-height: 70vh;
+      }
+
+      /* Desktop */
+      @media screen and (min-width: 768px) {
+        h1 {
+          font-size: 3em;
+        }
       }
     </style>
 
